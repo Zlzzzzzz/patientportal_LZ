@@ -6,7 +6,7 @@ from components.patient_card import render_patient_detail, render_patient_row
 from components.charts import render_response_pie, render_ae_bar, render_cancer_type_bar
 from components.ai_panel import render_ai_risk_panel
 
-API_BASE = "http://localhost:8000"
+API_BASE = "https://patientportallz-production.up.railway.app"
 
 st.set_page_config(page_title="Clinical Trial Portal", page_icon="🧬",
                    layout="wide", initial_sidebar_state="expanded")
@@ -117,7 +117,7 @@ except Exception:
     backend_ok = False
 
 if not backend_ok:
-    st.error("Cannot connect to backend at http://localhost:8000\n\n"
+    st.error("Cannot connect to backend at https://patientportallz-production.up.railway.app\n\n"
              "Run: `cd ~/clinical-trial-fullstack/backend && source .venv/bin/activate && uvicorn main:app --reload --port 8000`")
     st.stop()
 
